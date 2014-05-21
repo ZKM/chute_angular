@@ -19,8 +19,8 @@ angular
       });
   });
 
-angular.module('chuteAngularApp', ['chute']);
+angular.module('Test', ['chute']);
 
-angular.module('chuteAngularApp').controller('MainCtrl', ['$scope', 'Chute.API.Asset', function($scope, Asset) {
+angular.module('Test').controller('ChuteCtrl', ['$scope', 'Chute.API.Asset', function($scope, Asset) {
   $scope.assets = Asset.query({album: 'abcqsrlx', perPage: 3});
 }]);

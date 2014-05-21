@@ -1,12 +1,11 @@
-'use strict';
+"use strict";
 
 angular.module('chuteAngularApp')
   .controller('MainCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
-      'Karma',
-      'chute'
+      'Karma'
     ];
   });
 
@@ -15,6 +14,6 @@ angular.module('chuteAngularApp')
 // Chicago Food       = ayg6yqbu/2514974
 // Other Chicago      = ayg7ydjb/2514975
 
-angular.module('chuteAngularApp').controller('MainCtrl', ['$scope', 'Chute.API.Asset', function($scope, Asset) {
+angular.module('Test').controller('ChuteCtrl', ['$scope', 'Chute.API.Asset', function($scope, Asset) {
   $scope.assets = Asset.query({album: 'ayg5ofmi', perPage: 3});
 }]);
