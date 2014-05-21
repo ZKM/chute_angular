@@ -10,7 +10,7 @@ controller('MainCtrl', ['$scope', 'Chute.API.Asset',
 
 		$scope.assets = Asset.query({
 			album: 'ayg5ofmi',
-			perPage: 0
+			perPage: 100
 		});
 	}
 	]);

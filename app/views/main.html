@@ -2,15 +2,16 @@
   <h3 class="text-muted">Chute API Test w/Angular</h3>
 </div>
 
-
-<div class="wall">
+<div id="wall">
   <div class="wall-item" ng-repeat="asset in assets">
     <img ng-src="{{asset.url}}/w/300" width="300">
 
     <div class="like icon-star" ng-class="{'active': asset.hearted()}" ng-click="asset.toggleHeart()">
       
     </div>
-    <p><img src="{{asset.user.avatar}}" width="72" alt="" /></p>
+    <p>
+      <img ng-src="{{asset.user.avatar}}" width="72">
+    </p>
     <div class="meta">
       <span class="username">{{asset.user.username}}</span>
       <p>{{asset.source.service}}</p>
