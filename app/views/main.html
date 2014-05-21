@@ -3,16 +3,21 @@
 </div>
 
 
-<div class="wall" ng-app="Test" ng-controller="ChuteCtrl">
+<div class="wall">
   <div class="wall-item" ng-repeat="asset in assets">
     <img ng-src="{{asset.url}}/w/300" width="300">
 
     <div class="like icon-star" ng-class="{'active': asset.hearted()}" ng-click="asset.toggleHeart()">
       
     </div>
+    <p><img src="{{asset.user.avatar}}" width="72" alt="" /></p>
+    <div class="meta">
+      <span class="username">{{asset.user.username}}</span>
+      <p>{{asset.source.service}}</p>
+      <p>{{asset.tags}}</p>
+    </div>
     <p>{{asset.caption}}</p>
-    <ng-pluralize class="likes" count="asset.hearts" when="{'one':'1 like', 'other':'{} likes'}">
-    </ng-pluralize>
+    <ng-pluralize class="likes" count="asset.hearts" when="{'one':'1 like', 'other':'{} likes'}"></ng-pluralize>
   </div>
   <a class="load-more button" ng-show="assets.hasMore()" ng-click="assets.nextPage()">Load more</a>
 </div>
