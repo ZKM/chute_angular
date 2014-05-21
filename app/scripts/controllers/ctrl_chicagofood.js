@@ -9,7 +9,7 @@ controller('MainCtrl', ['$scope', 'Chute.API.Asset',
 		// Other Chicago      = ayg7ydjb/2514975
 
 		$scope.assets = Asset.query({
-			album: 'ayg5ofmi',
+			album: 'ayg6yqbu',
 			perPage: 0
 		});
 	}
