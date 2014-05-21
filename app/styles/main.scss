@@ -97,7 +97,7 @@ body {
 a img {
     border: none;
 }
- 
+
 .clearfix {
     zoom: 1;
     &:after {
@@ -144,6 +144,8 @@ div.wall {
     position: relative;
     background: #f4fbfd;
     border: 1px solid #dcdfe0;
+    overflow: hidden;
+
     @media (max-width: 320px) {
         margin-left: 9px;        
     }
@@ -161,12 +163,29 @@ div.wall-item {
     box-shadow: 0 1px 4px rgba(0,0,0,0.3);
     color: #c3c8cc;
     float: left;
-    margin: 20px 38px;
+    margin: 6px;
     overflow: hidden;
     width: 300px;
     @media (max-width: 320px) {
         padding: 5px;        
+        margin: 6px;
+        width: 97%;
+        
+        img {
+            max-width: 100%;
+        }
     }
+
+    @media (min-width: 768px){
+        margin: 20px 28px;
+    }
+    @media (min-width: 992px) {
+        margin: 20px 9%;        
+    }
+    @media (min-width: 1200px) {
+        margin: 20px 38px;        
+    }
+
     img.asset {
         border: 1px solid #e2e2e2;
         cursor: pointer;
