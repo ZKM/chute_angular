@@ -1,7 +1,15 @@
 <div class="header">
   <h3 class="text-muted">Chute API Test w/Angular</h3>
 </div>
-
+<div class="filter">
+  <nav>
+    <ul> 
+      <li><a href="">thebean</a></li>
+      <li>millenniumpark</li>
+      <li>Baseball</li>
+    </ul>
+  </nav>
+</div>
 <div id="wall">
   <div class="wall-item" ng-repeat="asset in assets">
     <img ng-src="{{asset.url}}/w/300" width="300">
@@ -9,16 +17,29 @@
     <div class="like icon-star" ng-class="{'active': asset.hearted()}" ng-click="asset.toggleHeart()">
       
     </div>
-    <p>
-      <img ng-src="{{asset.user.avatar}}" width="72">
-    </p>
+    <p><img ng-src="{{asset.user.avatar}}" width=""></p>
+    <p><img ng-src="{{asset.thumbnail}}" width=""></p>
     <div class="meta">
       <span class="username">{{asset.user.username}}</span>
-      <p>{{asset.source.service}}</p>
-      <p>{{asset.tags}}</p>
+      <p>Service/Social Channel: {{asset.source.service}}</p>
+      <p>Username: {{asset.username}}</p>
+      <p>Dimensions: {{asset.dimensions.width}}x{{asset.dimensions.height}}</p>
+      <p>Type: {{asset.type}}</p>
+      <p>Tags: {{asset.tags}}</p>
     </div>
-    <p>{{asset.caption}}</p>
+    <p>Caption: {{asset.caption}}</p>
+    <p>Location: {{asset.location}}</p>
+    <p>Created: {{asset.created_at}}</p>
+    <p>Updated: {{asset.updated_at}}</p>
+    <p><a href="{{asset.links.self.href}}">Asset Details</a></p>
+    <p><a href="{{asset.links.exif.href}}">Exif Details</a></p>
+    <p><a href="{{asset.links.geo.href}}">Geo Details</a></p>
+    <p><a href="{{asset.links.heart.href}}">Hearts Details</a></p>
+    <p><a href="{{asset.links.vote.href}}">Votes Details</a></p>
+    <p>shortcut: {{asset.shortcut}}</p>
+
     <ng-pluralize class="likes" count="asset.hearts" when="{'one':'1 like', 'other':'{} likes'}"></ng-pluralize>
+    <ng-pluralize class="likes" count="asset.votes" when="{'one':'1 vote', 'other':'{} votes'}"></ng-pluralize>
   </div>
   <a class="load-more button" ng-show="assets.hasMore()" ng-click="assets.nextPage()">Load more</a>
 </div>
